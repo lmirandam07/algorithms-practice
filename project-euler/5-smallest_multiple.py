@@ -8,19 +8,19 @@ def smallest_multiple(max_number):
     primes_gen = gen_primes(max_number)
     numbers_list = set(range(2, max_number+1))
     multiples = 1
-
-    prime = next(primes_gen)
+    prime = 1
 
     while len(numbers_list) > 1:
+        if prime not in numbers_list:
+            prime = next(primes_gen)
+
         numbers_list = {num // prime if num % prime == 0
                         else num for num in numbers_list}
-
         multiples *= prime
 
-        if prime not in numbers_list and len(numbers_list) > 1:
-            prime = next(primes_gen)
+
 
     return multiples
 
 
-print(smallest_multiple(20))
+print(smallest_multiple(42))
