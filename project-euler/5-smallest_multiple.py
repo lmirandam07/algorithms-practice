@@ -18,8 +18,6 @@ def smallest_multiple(max_number):
                         else num for num in numbers_list}
         multiples *= prime
 
-
-
     return multiples
 
 
