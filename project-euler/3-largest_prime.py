@@ -1,10 +1,10 @@
-def largest_prime_factor(MAX, divider = 2):
+def largest_prime_factor(max_num, divider = 2):
     prime_factors = []
 
-    while MAX > 1:
-        while MAX % divider == 0:
+    while max_num > 1:
+        while max_num % divider == 0:
             prime_factors.append(divider)
-            MAX /= divider
+            max_num /= divider
         divider += 1
 
     return prime_factors
